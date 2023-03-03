@@ -10,7 +10,6 @@ namespace EcuacionDelEstudiante
             int shw = 1;
             while (shw == 1)
             {
-
                 Console.WriteLine("                 ************************             ");
                 Console.WriteLine("      Aplicacion Para Resolver Ecuaciones Cuadraticas ");
                 Console.WriteLine(" ");
@@ -38,7 +37,6 @@ namespace EcuacionDelEstudiante
                     Console.WriteLine(" ");
                     Console.Write($"         La Respuesta es:    {respositivo}  ");
                     Console.WriteLine($"      y :    {resnegativo}");
-
                 }
                 else if (discriminante == 0)
                 {
@@ -47,13 +45,8 @@ namespace EcuacionDelEstudiante
                     Console.Write("               La Respuesta es; ");
                     Console.WriteLine(res);
                     Console.WriteLine(" ");
-
-
-
                 }
-
                 else
-
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("             la respuesta no esta en los reales");
@@ -66,7 +59,6 @@ namespace EcuacionDelEstudiante
                 else shw = 0;
 
                 Console.Clear();
-
             }
         }
     }
