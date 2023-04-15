@@ -6,7 +6,7 @@ namespace CalculoDeAñosMesesDias
     {
         static void Main()
         {
-            int dias, meses, años,diasrestantes,diasrestantesaño, stwch=1;
+            int dias, meses, años,diasrestantes, stwch=1;
 
             
 
@@ -16,13 +16,7 @@ namespace CalculoDeAñosMesesDias
                 años = CalcuAño(dias);
                 meses = Calcumes(dias);
                 diasrestantes= Calcumes(dias);
-                Console.WriteLine(string.Format("{0} Son {1} Años, {2} Meses, {3} Dias",dias,años,meses,diasrestantes));
-                Console.WriteLine(" ");
-                Console.WriteLine(" Para Ingresar Otro Numero Marca 1 o Cualquiera Para Finalizar");
-                stwch=Convert.ToInt32(Console.ReadLine());
-               
-                Console.Clear();
-                            
+                Showreturns( años, dias,meses, diasrestantes,stwch);
             }
 
 
@@ -58,6 +52,17 @@ namespace CalculoDeAñosMesesDias
             diasrestantesaño = dias % 365;
             diasrestantes = diasrestantesaño % 30;
             return diasrestantes;
+        }
+        static void Showreturns( int años, int dias, int meses, int diasrestantes, int stwch)
+        {
+
+
+            Console.WriteLine(string.Format("{0} Son {1} Años, {2} Meses, {3} Dias", dias, años, meses, diasrestantes));
+            Console.WriteLine(" ");
+            Console.WriteLine(" Para Ingresar Otro Numero Marca 1 o Cualquiera Para Finalizar");
+            stwch = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
         }
     }
 }
