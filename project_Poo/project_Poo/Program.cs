@@ -10,7 +10,7 @@ namespace project_Poo
             string firstName, lastName;
             DateTime birthDate, hiringDate;
             bool isActive;
-            decimal salary, sales, hourValue;
+            decimal salary, sales, hourValue, totals;
             double commissionPercentage, hours;
 
             SalaryEmployeed salaryEmployee = new SalaryEmployeed();
@@ -85,6 +85,12 @@ namespace project_Poo
             };
 
             hourlyEmployee.ShowEmployeeInformation();
+
+            TotalToPay totalToPay = new TotalToPay();
+
+            totalToPay.ShowTotalToPay(out totals);
+            
+
         }
 
         public static void AskData(out int id, out string firstName, out string lastName, out DateTime birthDate, out DateTime hiringDate, out bool isActive)

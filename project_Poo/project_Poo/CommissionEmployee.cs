@@ -4,7 +4,7 @@ using System.Text;
 
 namespace project_Poo
 {
-    internal class CommissionEmployee:Employee
+    public class CommissionEmployee:Employee
     {
         public Decimal Sales { get; set; }
         public double CommissionPercentage { get; set; }

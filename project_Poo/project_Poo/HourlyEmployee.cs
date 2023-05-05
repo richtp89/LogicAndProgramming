@@ -4,7 +4,7 @@ using System.Text;
 
 namespace project_Poo
 {
-    internal class HourlyEmployee : Employee
+   public class HourlyEmployee : Employee
     {
         public Decimal HoursValue { get; set; }
         public double Hours { get; set; }
