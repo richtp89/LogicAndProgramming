@@ -10,7 +10,7 @@ namespace project_Poo
             string firstName, lastName;
             DateTime birthDate, hiringDate;
             bool isActive;
-            decimal salary, sales, hourValue, totals;
+            decimal salary, sales, hourValue,paySalary,payCommission,payHourly,totalPay;
             double commissionPercentage, hours;
 
             SalaryEmployeed salaryEmployee = new SalaryEmployeed();
@@ -19,7 +19,7 @@ namespace project_Poo
             Console.WriteLine("**EMPLEADOS**");
             Console.WriteLine("*************\n");
 
-            Console.WriteLine("Empleado Asalariado\n");
+            Console.WriteLine("\nEmpleado Asalariado\n");
             AskData(out id, out firstName, out lastName, out birthDate, out hiringDate, out isActive);
 
             Console.Write("Ingrese el salario: ");
@@ -37,7 +37,7 @@ namespace project_Poo
             salaryEmployee.ShowEmployeeInformation();
 
 
-            Console.WriteLine("Empleado Por Comisión\n");
+            Console.WriteLine("\nEmpleado Por Comisión\n");
             AskData(out id, out firstName, out lastName, out birthDate, out hiringDate, out isActive);
 
             Console.Write("Ingrese las ventas del mes: ");
@@ -61,7 +61,7 @@ namespace project_Poo
 
             commissionEmployee.ShowEmployeeInformation();
 
-            Console.WriteLine("Empleado Por Horas\n");
+            Console.WriteLine("\nEmpleado Por Horas\n");
 
             AskData(out id, out firstName, out lastName, out birthDate, out hiringDate, out isActive);
 
@@ -85,12 +85,18 @@ namespace project_Poo
             };
 
             hourlyEmployee.ShowEmployeeInformation();
+            if (salaryEmployee.IsActive == true)
+                paySalary = salaryEmployee.GetValuePay();
+            else paySalary = 0;
 
-            TotalToPay totalToPay = new TotalToPay();
+            if (commissionEmployee.IsActive==true) payCommission = commissionEmployee.GetValueToPay();
+            else payCommission = 0;
 
-            totalToPay.ShowTotalToPay(out totals);
-            
+            if (hourlyEmployee.IsActive == true) { payHourly = hourlyEmployee.GetValueToPay(); }
+            else { payHourly = 0; } 
 
+            totalPay = paySalary + payCommission + payHourly;
+            Console.WriteLine(string.Format("\nTotal A Pagar Nomina:  {0:C}",totalPay));
         }
 
         public static void AskData(out int id, out string firstName, out string lastName, out DateTime birthDate, out DateTime hiringDate, out bool isActive)
